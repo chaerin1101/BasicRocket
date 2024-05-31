@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,10 @@ public class Rocket : MonoBehaviour
     private readonly float SPEED = 5f;
     private readonly float FUELPERSHOOT = 10f;
     public Button shootButton;
-    
+
+    [SerializeField] private TextMeshProUGUI currentScoreTxt;
+    [SerializeField] private TextMeshProUGUI HighScoreTxt;
+
     void Awake()
     {
         // TODO : Rigidbody2D 컴포넌트를 가져옴(캐싱) 
@@ -22,7 +26,12 @@ public class Rocket : MonoBehaviour
         // 거기에 스크립트가 연결된 GameObject(=Rocket)를 연결하기와 같은 기능.
         // AddListener와 인스펙터창에서 On Click 추가 둘 다 하면 중복적용됨.
     }
-    
+
+    private void Update()
+    {
+        
+    }
+
     public void Shoot()
     {
         // TODO : fuel이 넉넉하면 윗 방향으로 SPEED만큼의 힘으로 점프, 모자라면 무시
